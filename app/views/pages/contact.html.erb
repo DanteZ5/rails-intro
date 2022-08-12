@@ -1,0 +1,20 @@
+<h1>Liste des contacts</h1>
+
+<form action="/contact" method="get">
+  <input type="text"
+         name="member"
+         value="<%= params[:member] %>"
+         placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<h2>Meet our team</h2>
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<p>le user habite à <%= @place %></p>
+<%= link_to "go to about", a_propos_path %>
+
